@@ -15,9 +15,17 @@
             <h2>@Model.Name</h2>
         </dd>
         <dd>
-            <h2>
-                @Model.MemberShipType.Name
-            </h2>
+            Membership Type : @Model.MemberShipType.Name
         </dd>
+        @if(@Model.BirthDate != null)
+        {
+            <dd>
+                Birthdate : @Model.BirthDate
+            </dd>
+        }else {
+            <dd>
+
+            </dd>
+        }
     </dl>
 </div>

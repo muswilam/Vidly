@@ -194,6 +194,10 @@
     <Compile Include="Migrations\201905130114336_PopulateNameMembershipType.Designer.cs">
       <DependentUpon>201905130114336_PopulateNameMembershipType.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905131220552_AddBithDateCustomer.cs" />
+    <Compile Include="Migrations\201905131220552_AddBithDateCustomer.Designer.cs">
+      <DependentUpon>201905131220552_AddBithDateCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -299,6 +303,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905130114336_PopulateNameMembershipType.resx">
       <DependentUpon>201905130114336_PopulateNameMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905131220552_AddBithDateCustomer.resx">
+      <DependentUpon>201905131220552_AddBithDateCustomer.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

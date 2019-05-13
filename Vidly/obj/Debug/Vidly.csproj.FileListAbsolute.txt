@@ -61,3 +61,4 @@ C:\Users\Magic\documents\visual studio 2013\Projects\Vidly\Vidly\obj\Debug\Vidly
 C:\Users\Magic\documents\visual studio 2013\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddCustomerAnnotations.resources
 C:\Users\Magic\Documents\Visual Studio 2013\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddNameMembershipType.resources
 C:\Users\Magic\Documents\Visual Studio 2013\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.PopulateNameMembershipType.resources
+C:\Users\Magic\Documents\Visual Studio 2013\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddBithDateCustomer.resources

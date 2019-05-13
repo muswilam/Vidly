@@ -24,5 +24,6 @@ namespace Vidly.Models
         public byte GenreId { get; set; }
         public Genre Genre { get; set; }
 
+        public List<Customer> Customers { get; set; }
     }
 }

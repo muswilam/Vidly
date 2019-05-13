@@ -223,6 +223,18 @@
     <Compile Include="Migrations\201905131341007_DropReleationCustomerMovie.Designer.cs">
       <DependentUpon>201905131341007_DropReleationCustomerMovie.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905131625164_AddRelationbetweenMovieAndCustomer.cs" />
+    <Compile Include="Migrations\201905131625164_AddRelationbetweenMovieAndCustomer.Designer.cs">
+      <DependentUpon>201905131625164_AddRelationbetweenMovieAndCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905131635398_AddCustomerIdPropertyToMovie.cs" />
+    <Compile Include="Migrations\201905131635398_AddCustomerIdPropertyToMovie.Designer.cs">
+      <DependentUpon>201905131635398_AddCustomerIdPropertyToMovie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905131640450_DropCustomerIdFromMovie.cs" />
+    <Compile Include="Migrations\201905131640450_DropCustomerIdFromMovie.Designer.cs">
+      <DependentUpon>201905131640450_DropCustomerIdFromMovie.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -352,6 +364,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905131341007_DropReleationCustomerMovie.resx">
       <DependentUpon>201905131341007_DropReleationCustomerMovie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905131625164_AddRelationbetweenMovieAndCustomer.resx">
+      <DependentUpon>201905131625164_AddRelationbetweenMovieAndCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905131635398_AddCustomerIdPropertyToMovie.resx">
+      <DependentUpon>201905131635398_AddCustomerIdPropertyToMovie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905131640450_DropCustomerIdFromMovie.resx">
+      <DependentUpon>201905131640450_DropCustomerIdFromMovie.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

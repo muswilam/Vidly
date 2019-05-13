@@ -161,7 +161,8 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\moviesController.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\MovieController.cs" />
     <Compile Include="Custom_ViewModel\RandomMovieViewModel.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -198,9 +199,34 @@
     <Compile Include="Migrations\201905131220552_AddBithDateCustomer.Designer.cs">
       <DependentUpon>201905131220552_AddBithDateCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905131303587_AddNewPropertiesInMovie.cs" />
+    <Compile Include="Migrations\201905131303587_AddNewPropertiesInMovie.Designer.cs">
+      <DependentUpon>201905131303587_AddNewPropertiesInMovie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905131306392_AddMovieNotation.cs" />
+    <Compile Include="Migrations\201905131306392_AddMovieNotation.Designer.cs">
+      <DependentUpon>201905131306392_AddMovieNotation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905131313449_DropGenreProperty.cs" />
+    <Compile Include="Migrations\201905131313449_DropGenreProperty.Designer.cs">
+      <DependentUpon>201905131313449_DropGenreProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905131320087_AddClassGenre.cs" />
+    <Compile Include="Migrations\201905131320087_AddClassGenre.Designer.cs">
+      <DependentUpon>201905131320087_AddClassGenre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905131321460_PopulateGenreValues.cs" />
+    <Compile Include="Migrations\201905131321460_PopulateGenreValues.Designer.cs">
+      <DependentUpon>201905131321460_PopulateGenreValues.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905131341007_DropReleationCustomerMovie.cs" />
+    <Compile Include="Migrations\201905131341007_DropReleationCustomerMovie.Designer.cs">
+      <DependentUpon>201905131341007_DropReleationCustomerMovie.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MembershipType.cs" />
@@ -269,8 +295,10 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Navbar.cshtml" />
-    <Content Include="Views\movies\Index.cshtml" />
-    <Content Include="Views\movies\Details.cshtml" />
+    <Content Include="Views\Customer\Index.cshtml" />
+    <Content Include="Views\Customer\Details.cshtml" />
+    <Content Include="Views\Movie\Index.cshtml" />
+    <Content Include="Views\Movie\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -306,6 +334,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905131220552_AddBithDateCustomer.resx">
       <DependentUpon>201905131220552_AddBithDateCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905131303587_AddNewPropertiesInMovie.resx">
+      <DependentUpon>201905131303587_AddNewPropertiesInMovie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905131306392_AddMovieNotation.resx">
+      <DependentUpon>201905131306392_AddMovieNotation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905131313449_DropGenreProperty.resx">
+      <DependentUpon>201905131313449_DropGenreProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905131320087_AddClassGenre.resx">
+      <DependentUpon>201905131320087_AddClassGenre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905131321460_PopulateGenreValues.resx">
+      <DependentUpon>201905131321460_PopulateGenreValues.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905131341007_DropReleationCustomerMovie.resx">
+      <DependentUpon>201905131341007_DropReleationCustomerMovie.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

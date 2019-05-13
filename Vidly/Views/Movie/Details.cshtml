@@ -21,6 +21,11 @@
                 <li>Realese Date : @Model.ReleaseDate</li>
                 <li>Added Date : @Model.DateAdded</li>
                 <li>Number In Stock : @Model.NumberInStock</li>
+                <li> Customer : </li>
+                 @foreach(var item in Model.Customers)
+                 {
+                    <b>-</b> @item.Name <br />
+                 }
             </ul>
         </dd>
     </dl>

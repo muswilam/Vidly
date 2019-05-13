@@ -9,11 +9,11 @@ using System.Data.Entity;
 
 namespace Vidly.Controllers
 {
-    public class moviesController : Controller
+    public class CustomerController : Controller
     {
         private ApplicationDbContext _context;
 
-        public moviesController()
+        public CustomerController()
         {
             _context = new ApplicationDbContext();
         }
@@ -37,13 +37,5 @@ namespace Vidly.Controllers
             _context.Dispose();
         }
 
-        //private IEnumerable<Customer> GetCustomers()
-        //{
-        //    return new List<Customer>
-        //    {
-        //        new Customer { CustomerId = 1 , Name = "Jack David"},
-        //        new Customer { CustomerId = 2 , Name = "Mary William"}
-        //    };
-        //}
     }
 }

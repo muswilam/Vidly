@@ -62,3 +62,9 @@ C:\Users\Magic\documents\visual studio 2013\Projects\Vidly\Vidly\obj\Debug\Vidly
 C:\Users\Magic\Documents\Visual Studio 2013\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddNameMembershipType.resources
 C:\Users\Magic\Documents\Visual Studio 2013\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.PopulateNameMembershipType.resources
 C:\Users\Magic\Documents\Visual Studio 2013\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddBithDateCustomer.resources
+C:\Users\Magic\documents\visual studio 2013\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddNewPropertiesInMovie.resources
+C:\Users\Magic\documents\visual studio 2013\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddMovieNotation.resources
+C:\Users\Magic\documents\visual studio 2013\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.DropGenreProperty.resources
+C:\Users\Magic\documents\visual studio 2013\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddClassGenre.resources
+C:\Users\Magic\documents\visual studio 2013\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.PopulateGenreValues.resources
+C:\Users\Magic\documents\visual studio 2013\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.DropReleationCustomerMovie.resources

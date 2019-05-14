@@ -23,9 +23,15 @@ namespace Vidly.Controllers
             return View(customers);
         }
 
+        public ActionResult New()
+        {
+            return View();
+        }
+
         public ActionResult Details(int id)
         {
-            var customer = _context.Customers.Include(c => c.MemberShipType).Include(mov => mov.Movie).SingleOrDefault(cust => cust.CustomerId == id);
+            var customer = _context.Customers.Include(c => c.MemberShipType).Include(mov => mov.Movie)
+                                             .SingleOrDefault(cust => cust.CustomerId == id);
             if (customer == null)
                 return HttpNotFound();
 

@@ -1,4 +1,4 @@
-﻿@model Vidly.Models.Customer
+﻿@model Vidly.ViewModel.NewCustomer_ViewModel
 
 @{
     ViewBag.Title = "New";
@@ -11,17 +11,24 @@
 {
     
     <div class="form-group">
-        @Html.LabelFor(model => model.Name) :
-        @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+        @Html.LabelFor(model => model.Customer.Name) :
+        @Html.TextBoxFor(model => model.Customer.Name, new { @class = "form-control" })
     </div>
     
     <div class="form-group">
-        @Html.LabelFor(model => model.BirthDate) :
-        @Html.TextBoxFor(model => model.BirthDate, new { @class = "form-control" })
+        @Html.LabelFor(model => model.Customer.BirthDate) :
+        @Html.TextBoxFor(model => model.Customer.BirthDate, new { @class = "form-control" })
     </div>
 
+    <div class="form-group">
+        @Html.LabelFor(model => model.Customer.MembershipTypeId) :
+        @Html.DropDownListFor(model => model.Customer.MembershipTypeId, new SelectList(Model.MembershipeTypes, "Id", "Name"), "Select Membership", new { @class = "form-control" })
+    </div>
+    
     <div class="form-check">
-        @Html.CheckBoxFor(model => model.IsSubscribedToNewsLetter)
+        @Html.CheckBoxFor(model => model.Customer.IsSubscribedToNewsLetter)
         <label class="form-check-label" for="exampleCheck1">Subscribed To News Letter</label>
     </div>
+
+
 }

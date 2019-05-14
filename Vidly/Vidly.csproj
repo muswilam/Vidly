@@ -163,7 +163,8 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\MovieController.cs" />
-    <Compile Include="Custom_ViewModel\RandomMovieViewModel.cs" />
+    <Compile Include="ViewModel\NewCustomer_ViewModel.cs" />
+    <Compile Include="ViewModel\RandomMovieViewModel.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

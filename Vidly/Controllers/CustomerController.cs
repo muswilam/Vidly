@@ -26,12 +26,12 @@ namespace Vidly.Controllers
         public ActionResult New()
         {
             var membershipTypes = _context.MembershipTypes.ToList();
-            var viewModel = new NewCustomer_ViewModel
+            var viewModel = new CustomerFormViewModel
             {
                 MembershipeTypes = membershipTypes
             };
 
-            return View(viewModel);
+            return View("CustomerForm",viewModel);
         }
 
         [HttpPost]
@@ -51,6 +51,21 @@ namespace Vidly.Controllers
                 return HttpNotFound();
 
             return View(customer);
+        }
+
+        public ActionResult Edit(int id)
+        {
+            var customer = _context.Customers.SingleOrDefault(c => c.CustomerId == id);
+
+            if (customer == null)
+                return HttpNotFound();
+
+            var viewModel = new CustomerFormViewModel
+            {
+                Customer = customer,
+                MembershipeTypes = _context.MembershipTypes.ToList()
+            };
+            return View("CustomerForm" , viewModel);
         }
 
         protected override void Dispose(bool disposing)

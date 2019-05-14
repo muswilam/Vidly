@@ -6,7 +6,7 @@ using Vidly.Models;
 
 namespace Vidly.ViewModel
 {
-    public class NewCustomer_ViewModel
+    public class CustomerFormViewModel
     {
         public IEnumerable<MembershipType> MembershipeTypes { get; set; }
         public Customer Customer { get; set; }

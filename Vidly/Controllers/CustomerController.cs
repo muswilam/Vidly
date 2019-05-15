@@ -85,6 +85,5 @@ namespace Vidly.Controllers
         {
             _context.Dispose();
         }
-
     }
 }

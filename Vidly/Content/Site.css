@@ -31,3 +31,7 @@ textarea {
     border: 1px solid;
     color: firebrick;
 }
+
+.validation-summary-errors {
+    color: firebrick;
+}

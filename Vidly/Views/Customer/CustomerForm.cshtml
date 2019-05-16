@@ -9,17 +9,12 @@
 
 @using(Html.BeginForm("Save" , "Customer"))
 {
+    @Html.ValidationSummary(true , "Please check the errors below.")
     
     <div class="form-group">
         @Html.LabelFor(model => model.Customer.Name) :
         @Html.TextBoxFor(model => model.Customer.Name, new { @class = "form-control" })
         @Html.ValidationMessageFor(model => model.Customer.Name)
-    </div>
-    
-    <div class="form-group">
-        @Html.LabelFor(model => model.Customer.BirthDate) :
-        @Html.TextBoxFor(model => model.Customer.BirthDate,"{0:d MMM yyyy}", new { @class = "form-control" })
-        @Html.ValidationMessageFor(model => model.Customer.BirthDate)
     </div>
 
     <div class="form-group">
@@ -27,7 +22,13 @@
         @Html.DropDownListFor(model => model.Customer.MembershipTypeId, new SelectList(Model.MembershipeTypes, "Id", "Name"), "Select Membership", new { @class = "form-control" })
         @Html.ValidationMessageFor(model => model.Customer.MembershipTypeId)
     </div>
-    
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Customer.BirthDate) :
+        @Html.TextBoxFor(model => model.Customer.BirthDate,"{0:d MMM yyyy}", new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Customer.BirthDate)
+    </div>
+
     <div class="form-check">
         @Html.CheckBoxFor(model => model.Customer.IsSubscribedToNewsLetter)
         <label class="form-check-label" for="exampleCheck1">Subscribed To News Letter</label>
@@ -35,4 +36,9 @@
 
     @Html.HiddenFor(model => model.Customer.CustomerId)
     <button type="submit" class="btn btn-primary" >Save</button>
+}
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
 }

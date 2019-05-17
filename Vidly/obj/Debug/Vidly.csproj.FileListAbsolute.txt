@@ -71,3 +71,9 @@ C:\Users\Magic\documents\visual studio 2013\Projects\Vidly\Vidly\obj\Debug\Vidly
 C:\Users\Magic\documents\visual studio 2013\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddRelationbetweenMovieAndCustomer.resources
 C:\Users\Magic\documents\visual studio 2013\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddCustomerIdPropertyToMovie.resources
 C:\Users\Magic\documents\visual studio 2013\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.DropCustomerIdFromMovie.resources
+C:\Users\Magic\documents\visual studio 2013\Projects\Vidly\Vidly\bin\System.Net.Http.Formatting.dll
+C:\Users\Magic\documents\visual studio 2013\Projects\Vidly\Vidly\bin\System.Web.Http.dll
+C:\Users\Magic\documents\visual studio 2013\Projects\Vidly\Vidly\bin\System.Web.Http.WebHost.dll
+C:\Users\Magic\documents\visual studio 2013\Projects\Vidly\Vidly\bin\System.Net.Http.Formatting.xml
+C:\Users\Magic\documents\visual studio 2013\Projects\Vidly\Vidly\bin\System.Web.Http.xml
+C:\Users\Magic\documents\visual studio 2013\Projects\Vidly\Vidly\bin\System.Web.Http.WebHost.xml

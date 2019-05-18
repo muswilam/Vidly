@@ -70,8 +70,8 @@ namespace Vidly.Controllers.Api
                 throw new HttpResponseException(HttpStatusCode.BadRequest);
 
             //update items
-            Mapper.Map(customerDto, customerInDb);
-           // Mapper.Map<CustomerDto, Customer>(customerDto, customerInDb); //same thing
+            // Mapper.Map(customerDto, customerInDb); 
+            Mapper.Map<CustomerDto, Customer>(customerDto, customerInDb); //same thing
 
             _context.SaveChanges();
         }

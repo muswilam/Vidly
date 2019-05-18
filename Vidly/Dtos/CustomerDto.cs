@@ -13,12 +13,12 @@ namespace Vidly.Dtos
         public int CustomerId { get; set; }
 
         [Required]
-        [StringLength(225)]
+        [StringLength(225)] 
         public string Name { get; set; }
 
         public bool IsSubscribedToNewsLetter { get; set; }
 
-        [MinYearMemberIs18]
+        //[MinYearMemberIs18]
         public Nullable<DateTime> BirthDate { get; set; }
 
         public byte MembershipTypeId { get; set; }

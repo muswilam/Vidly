@@ -5,6 +5,8 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using Vidly.Models;
+using Vidly.Dtos;
+using AutoMapper;
 
 namespace Vidly.Controllers.Api
 {
@@ -18,39 +20,43 @@ namespace Vidly.Controllers.Api
         }
 
         // Get List /Api/customers
-        public IEnumerable<Customer> GetCustomers()
+        public IEnumerable<CustomerDto> GetCustomers()
         {
-            return _context.Customers.ToList();
+            return _context.Customers.ToList().Select(Mapper.Map<Customer,CustomerDto>);
         }
 
         // Get one /Api/Customers/1
-        public Customer GetCustomer(int id)
+        public CustomerDto GetCustomer(int id)
         {
             var customerInDb = _context.Customers.SingleOrDefault(cust => cust.CustomerId == id);
 
             //check id is exist in DB
             if (customerInDb == null)
                 throw new HttpResponseException(HttpStatusCode.NotFound);
-            return customerInDb;
+
+            return Mapper.Map<Customer, CustomerDto>(customerInDb);
         }
 
         // Post Customer /Api/Customer
         [HttpPost]
-        public Customer CreateCustomer(Customer customer)
+        public CustomerDto CreateCustomer(CustomerDto customerDto)
         {
             //check model is valid
             if (!ModelState.IsValid)
                 throw new HttpResponseException(HttpStatusCode.BadRequest);
 
+            var customer =  Mapper.Map<CustomerDto, Customer>(customerDto);
             _context.Customers.Add(customer);
             _context.SaveChanges();
 
-            return customer;
+            customerDto.CustomerId = customer.CustomerId;
+
+            return customerDto;
         }
 
         // Update Exist Customer /Api/Customer/id
         [HttpPut]
-        public void UpdateCustomer(int id , Customer customer)
+        public void UpdateCustomer(int id , CustomerDto customerDto)
         {
             //get id from DB 
             var customerInDb = _context.Customers.SingleOrDefault(cust => cust.CustomerId == id);
@@ -64,10 +70,8 @@ namespace Vidly.Controllers.Api
                 throw new HttpResponseException(HttpStatusCode.BadRequest);
 
             //update items
-            customerInDb.Name = customer.Name;
-            customerInDb.BirthDate = customer.BirthDate;
-            customerInDb.MembershipTypeId = customer.MembershipTypeId;
-            customerInDb.IsSubscribedToNewsLetter = customer.IsSubscribedToNewsLetter;
+            Mapper.Map(customerDto, customerInDb);
+           // Mapper.Map<CustomerDto, Customer>(customerDto, customerInDb); //same thing
 
             _context.SaveChanges();
         }

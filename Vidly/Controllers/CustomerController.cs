@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using Vidly.Models;
 using Vidly.ViewModel;
 using System.Data.Entity;
+using AutoMapper;
 
 namespace Vidly.Controllers
 {
@@ -72,10 +73,11 @@ namespace Vidly.Controllers
             {
                 var customerInDb = _context.Customers.Single(c => c.CustomerId == customer.CustomerId);
 
-                customerInDb.Name = customer.Name;
-                customerInDb.BirthDate = customer.BirthDate ;
-                customerInDb.MembershipTypeId = customer.MembershipTypeId;
-                customerInDb.IsSubscribedToNewsLetter = customer.IsSubscribedToNewsLetter;
+                Mapper.Map(customer, customerInDb);
+                //customerInDb.Name = customer.Name;
+                //customerInDb.BirthDate = customer.BirthDate ;
+                //customerInDb.MembershipTypeId = customer.MembershipTypeId;
+                //customerInDb.IsSubscribedToNewsLetter = customer.IsSubscribedToNewsLetter;
 
             }
             _context.SaveChanges();

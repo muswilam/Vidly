@@ -7,6 +7,7 @@ using Vidly.Models;
 using System.Data.Entity;
 using Vidly.ViewModel;
 using System.Data.Entity.Validation;
+using AutoMapper;
 
 namespace Vidly.Controllers
 {
@@ -67,10 +68,14 @@ namespace Vidly.Controllers
             else
             {
                 Movie movieInDb = _context.Movies.Single(mov => mov.Id == movie.Id);
-                movieInDb.Name = movie.Name;
-                movieInDb.ReleaseDate = movie.ReleaseDate;
-                movieInDb.Genre = movie.Genre;
-                movieInDb.NumberInStock = movie.NumberInStock;
+
+                //movie.DateAdded = movieInDb.DateAdded;
+                Mapper.Map(movie, movieInDb);
+
+                //movieInDb.Name = movie.Name;
+                //movieInDb.ReleaseDate = movie.ReleaseDate;
+                //movieInDb.GenreId = movie.GenreId;
+                //movieInDb.NumberInStock = movie.NumberInStock;
             }
             _context.SaveChanges();
             return RedirectToAction("Index" , "Movie");

@@ -20,30 +20,31 @@ namespace Vidly.Controllers.Api
         }
 
         // Get List /Api/customers
-        public IEnumerable<CustomerDto> GetCustomers()
+        public IHttpActionResult GetCustomers()
         {
-            return _context.Customers.ToList().Select(Mapper.Map<Customer,CustomerDto>);
+            var Customers = _context.Customers.ToList().Select(Mapper.Map<Customer,CustomerDto>);
+            return Ok(Customers);
         }
 
         // Get one /Api/Customers/1
-        public CustomerDto GetCustomer(int id)
+        public IHttpActionResult GetCustomer(int id)
         {
             var customerInDb = _context.Customers.SingleOrDefault(cust => cust.CustomerId == id);
 
             //check id is exist in DB
             if (customerInDb == null)
-                throw new HttpResponseException(HttpStatusCode.NotFound);
+                return NotFound();
 
-            return Mapper.Map<Customer, CustomerDto>(customerInDb);
+            return Ok(Mapper.Map<Customer, CustomerDto>(customerInDb));
         }
 
         // Post Customer /Api/Customer
         [HttpPost]
-        public CustomerDto CreateCustomer(CustomerDto customerDto)
+        public IHttpActionResult CreateCustomer(CustomerDto customerDto)
         {
             //check model is valid
             if (!ModelState.IsValid)
-                throw new HttpResponseException(HttpStatusCode.BadRequest);
+                return BadRequest("Something Went Wrong");
 
             var customer =  Mapper.Map<CustomerDto, Customer>(customerDto);
             _context.Customers.Add(customer);
@@ -51,7 +52,7 @@ namespace Vidly.Controllers.Api
 
             customerDto.CustomerId = customer.CustomerId;
 
-            return customerDto;
+            return Created(new Uri(Request.RequestUri + "/" + customer.CustomerId), customerDto);
         }
 
         // Update Exist Customer /Api/Customer/id

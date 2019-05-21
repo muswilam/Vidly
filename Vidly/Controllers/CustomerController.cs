@@ -74,11 +74,6 @@ namespace Vidly.Controllers
                 var customerInDb = _context.Customers.Single(c => c.CustomerId == customer.CustomerId);
 
                 Mapper.Map(customer, customerInDb);
-                //customerInDb.Name = customer.Name;
-                //customerInDb.BirthDate = customer.BirthDate ;
-                //customerInDb.MembershipTypeId = customer.MembershipTypeId;
-                //customerInDb.IsSubscribedToNewsLetter = customer.IsSubscribedToNewsLetter;
-
             }
             _context.SaveChanges();
 

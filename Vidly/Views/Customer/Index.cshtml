@@ -7,25 +7,55 @@
 
 <h2>Customers</h2>
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            Discount Rate
-        </th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.ActionLink(@item.Name, "Edit", new { id = item.CustomerId})
-        </td>
-        <td>
-            @item.MemberShipType.Name
-        </td>
-    </tr>
-}
+<table class="table" id="customer">
+    <thead>
+        <tr>
+            <th> @Html.DisplayNameFor(model => model.Name) </th>
+            <th> Discount Rate </th>
+            <th> Delete </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.ActionLink(@item.Name, "Edit", new { id = item.CustomerId })
+                </td>
+                <td>
+                    @item.MemberShipType.Name
+                </td>
+                <td>
+                    <button data-customer-id="@item.CustomerId" class="btn btn-danger js-delete">Delete</button>
+                </td>
+            </tr>
+        }
+    </tbody>
 
 </table>
+
+@section scripts
+{
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#customer").DataTable();
+
+            $("#customer").on("click",".js-delete", function () {
+                var button = $(this);
+
+                bootbox.confirm("Are You Sure ? ", function (result) {
+                    if (result) {
+                        $.ajax({
+                            url: "/api/customers/" + button.attr("data-customer-id"),
+                            method: "Delete",
+                            success: function () {
+                                button.parents("tr").remove();
+                            }
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+}

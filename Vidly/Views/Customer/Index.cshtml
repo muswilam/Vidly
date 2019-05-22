@@ -7,29 +7,17 @@
 
 <h2>Customers</h2>
 
-<table class="table" id="customer">
+<table class="table" id="customers">
     <thead>
         <tr>
-            <th> @Html.DisplayNameFor(model => model.Name) </th>
-            <th> Discount Rate </th>
-            <th> Delete </th>
+            <th> Customer </th>
+            <th> Membership Type </th>
+            <th> BirthDate </th>
+            <th> Delete </th> 
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.ActionLink(@item.Name, "Edit", new { id = item.CustomerId })
-                </td>
-                <td>
-                    @item.MemberShipType.Name
-                </td>
-                <td>
-                    <button data-customer-id="@item.CustomerId" class="btn btn-danger js-delete">Delete</button>
-                </td>
-            </tr>
-        }
+        
     </tbody>
 
 </table>
@@ -39,9 +27,41 @@
 
     <script type="text/javascript">
         $(document).ready(function () {
-            $("#customer").DataTable();
+           var table = $("#customers").DataTable({
 
-            $("#customer").on("click",".js-delete", function () {
+                ajax: {
+                    url: "/api/customers",
+                    dataSrc: ""
+                },
+                columns:
+                    [
+                        {
+                            data: "name",
+                            render: function (data, type, customer) {
+                                return "<a href='/customer/edit/ " + customer.customerId + "'>" + data +" </a>";
+                            }
+                        },
+                        {
+                            data: "membershipType.name"
+                        },
+                        {
+                            data: "birthDate",
+                            render: function (data) {
+                                var date = new Date(data);
+                                var month = date.getMonth() + 1;
+                                return (month) + "/" + date.getDate() + "/" + date.getFullYear();
+                            }
+                        },
+                        {
+                            data: "customerId",
+                            render: function (data) {
+                                return "<button class='btn btn-danger js-delete' data-customer-id=" + data + ">Delete</button>";
+                            }
+                        }
+                    ]
+            });
+
+            $("#customers").on("click",".js-delete", function () {
                 var button = $(this);
 
                 bootbox.confirm("Are You Sure ? ", function (result) {
@@ -50,7 +70,7 @@
                             url: "/api/customers/" + button.attr("data-customer-id"),
                             method: "Delete",
                             success: function () {
-                                button.parents("tr").remove();
+                                table.row(button.parents("tr")).remove().draw();
                             }
                         });
                     }

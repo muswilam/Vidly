@@ -20,8 +20,7 @@ namespace Vidly.Controllers
         }
         public ActionResult Index()
         {
-            var customers = _context.Customers.Include(c => c.MemberShipType).ToList();
-            return View(customers);
+            return View();
         }
 
         public ActionResult New()
@@ -82,7 +81,7 @@ namespace Vidly.Controllers
 
         public ActionResult Details(int id)
         {
-            var customer = _context.Customers.Include(c => c.MemberShipType).Include(mov => mov.Movie)
+            var customer = _context.Customers.Include(c => c.MembershipType).Include(mov => mov.Movie)
                                              .SingleOrDefault(cust => cust.CustomerId == id);
             if (customer == null)
                 return HttpNotFound();

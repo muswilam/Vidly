@@ -6,27 +6,63 @@
 }
 
 <h2>Movies</h2>
-@Html.ActionLink("New Movie", "New", "Movie", new { @class = "btn btn-primary"})
+@Html.ActionLink("New Movie", "New", "Movie", new { @class = "btn btn-primary" })
 <br />
 <br />
-<table class="table" id="movies">
+<table class="table table-bordered table-hover" id="movies">
+    <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th>
-                Genre
-            </th>
+            <th> Movie </th>
+            <th> Genre </th>
+            <th> Delete </th>
         </tr>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.ActionLink(item.Name, "Edit", "Movie", new { id = item.Id }, null)
-                </td>
-                <td>
-                    @item.Genre.GenreName
-                </td>
-            </tr>
-        }
+    </thead>
+    <tbody></tbody>
 </table>
+
+@section scripts
+{
+    <script type="text/javascript">
+        $(document).ready(function () {
+           var table = $("#movies").DataTable({
+                ajax: {
+                    url: "/api/movies",
+                    dataSrc: ""
+                },
+                columns: [
+                    {
+                        data: "name",
+                        render: function (data, type, movie) {
+                            return "<a href='/movie/edit/" + movie.id + "'>" + data + "</a>";
+                        }
+                    },
+                    {
+                        data: "genre.genreName"
+                    },
+                    {
+                        data: "id",
+                        render: function (data) {
+                            return "<button class='btn btn-danger js-delete' movie-data-id=" + data + ">Delete</button>";
+                        }
+                    }
+                ]
+           });
+
+           $("#movies").on("click", ".js-delete", function () {
+               var button = $(this);
+
+               bootbox.confirm("Are You Sure ? ", function (result) {
+                   if (result) {
+                       $.ajax({
+                           url: "/api/movies/" + button.attr("movie-data-id"),
+                           method: "Delete",
+                           success: function () {
+                               table.row(button.parents("tr")).remove().draw();
+                           }
+                       });
+                   }
+               });
+           });
+        });
+    </script>
+}

@@ -23,5 +23,7 @@ namespace Vidly.Dtos
         public int NumberInStock { get; set; }
 
         public byte GenreId { get; set; }
+
+        public GenreDto genre { get; set; }
     }
 }

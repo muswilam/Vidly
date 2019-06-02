@@ -80,3 +80,4 @@ C:\Users\Magic\documents\visual studio 2013\Projects\Vidly\Vidly\bin\System.Web.
 C:\Users\Magic\documents\visual studio 2013\Projects\Vidly\Vidly\bin\AutoMapper.dll
 C:\Users\Magic\documents\visual studio 2013\Projects\Vidly\Vidly\bin\AutoMapper.xml
 C:\Users\Magic\documents\visual studio 2013\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.SeedUsers.resources
+C:\Users\Magic\documents\visual studio 2013\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddDrivingLicenseUser.resources

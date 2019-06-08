@@ -81,3 +81,4 @@ C:\Users\Magic\documents\visual studio 2013\Projects\Vidly\Vidly\bin\AutoMapper.
 C:\Users\Magic\documents\visual studio 2013\Projects\Vidly\Vidly\bin\AutoMapper.xml
 C:\Users\Magic\documents\visual studio 2013\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.SeedUsers.resources
 C:\Users\Magic\documents\visual studio 2013\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddDrivingLicenseUser.resources
+C:\Users\Magic\documents\visual studio 2013\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddPhoneToApplicationUser.resources

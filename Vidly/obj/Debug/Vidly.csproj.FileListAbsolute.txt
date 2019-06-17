@@ -87,3 +87,5 @@ C:\Users\Magic\documents\visual studio 2013\Projects\Vidly\Vidly\bin\Glimpse.Asp
 C:\Users\Magic\documents\visual studio 2013\Projects\Vidly\Vidly\bin\Glimpse.Core.dll
 C:\Users\Magic\documents\visual studio 2013\Projects\Vidly\Vidly\bin\Glimpse.EF6.dll
 C:\Users\Magic\documents\visual studio 2013\Projects\Vidly\Vidly\bin\Glimpse.Mvc5.dll
+C:\Users\Magic\documents\visual studio 2013\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.CreateRentalAssociationClassBetweenCustomerAndMovie.resources
+C:\Users\Magic\documents\visual studio 2013\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddNumberAvailabePropInMovie.resources

@@ -27,7 +27,8 @@ namespace Vidly.App_Start
 
             // Domain to Same Domain
             Mapper.CreateMap<Movie, Movie>()
-                .ForMember( mov => mov.DateAdded , opt => opt.Ignore());
+                .ForMember(mov => mov.DateAdded, opt => opt.Ignore())
+                .ForMember(mov => mov.NumberAvailable, mov => mov.MapFrom(src => src.NumberInStock));
 
             Mapper.CreateMap<Customer, Customer>();
         }

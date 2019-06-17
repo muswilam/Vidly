@@ -91,11 +91,12 @@
 
                 })
                 .done(function () {
-                    console.log("Done");
-                    console.log(vm);
+                    toastr.success("Rentals Successfully recorded.", "Sully Says!")
+                    $("#customer").typeahead("val", "");
+                    $(".row").val("");
                 })
                 .fail(function () {
-
+                    toastr.error("Something went wrong!");
                 })
             })
         })

@@ -30,17 +30,26 @@ namespace Vidly.Controllers.Api
             // iterate of movies and make obj of rental for every movie
             foreach(var movie in movies)
             {
+                
                 if (movie.NumberAvailable == 0)
                     return BadRequest("Movie is not Available");
-                movie.NumberAvailable--; 
-                  
-                Rental rental = new Rental()
+                movie.NumberAvailable--;
+
+                //  *** Check if customer rented movie before ***
+                Rental movieIsRentend = _context.Rentals.FirstOrDefault(movRented => movRented.Customer.CustomerId == newRental.CustomerId && 
+                    movRented.Movie.Id == movie.Id);
+                if (movieIsRentend == null)
                 {
-                    Movie = movie,
-                    Customer = customer,
-                    DateRented = DateTime.Now
-                };
-                _context.Rentals.Add(rental);
+                    Rental rental = new Rental()
+                    {
+                        Movie = movie,
+                        Customer = customer,
+                        DateRented = DateTime.Now
+                    };
+                    _context.Rentals.Add(rental);
+                }
+                else
+                    return BadRequest("Error");
             }
             _context.SaveChanges();
             return Ok();

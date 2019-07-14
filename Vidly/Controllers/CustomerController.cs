@@ -23,6 +23,7 @@ namespace Vidly.Controllers
             return View();
         }
 
+        [Authorize(Roles = RoleName.AdminManagment)]
         public ActionResult New()
         {
             var membershipTypes = _context.MembershipTypes.ToList();
@@ -35,6 +36,7 @@ namespace Vidly.Controllers
             return View("CustomerForm",viewModel);
         }
 
+        [Authorize(Roles=RoleName.AdminManagment)]
         public ActionResult Edit(int id)
         {
             var customer = _context.Customers.SingleOrDefault(c => c.CustomerId == id);

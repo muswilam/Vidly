@@ -6,10 +6,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
 
 <div>
-    <h4>Movie</h4>
+    <br />
+    <h4>Movie Details</h4>
     <hr />
     <dl class="dl-horizontal">
         <dd>
@@ -22,20 +22,6 @@
                 <li>Realese Date : @Model.ReleaseDate</li>
                 <li>Added Date : @Model.DateAdded</li>
                 <li>Number In Stock : @Model.NumberInStock</li>
-                @if (User.IsInRole(RoleName.CanManageMovies))
-                {
-                <li> Customer : </li>
-
-                    foreach (var item in Model.Customers)
-                    {
-                        <b>-</b> @item.Name
-                        <br />
-                    }
-                }
-                else
-                {
-
-                }
             </ul>
         </dd>
     </dl>

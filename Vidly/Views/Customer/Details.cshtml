@@ -5,27 +5,26 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<h2>Profile</h2>
 
 <div>
-    <h4>Customer</h4>
     <hr />
     <dl class="dl-horizontal">
         <dd>
             <h2>@Model.Name</h2>
         </dd>
         <dd>
-            Membership Type : @Model.MemberShipType.Name
+            Membership Type : @Model.MembershipType.Name
         </dd>
-        <dd>
-            Movie : @Model.Movie.Name
-        </dd>
-        @if(@Model.BirthDate != null)
+        
+        @if (@Model.BirthDate != null)
         {
             <dd>
                 Birthdate : @Model.BirthDate
             </dd>
-        }else {
+        }
+        else
+        {
             <dd>
 
             </dd>

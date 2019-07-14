@@ -1,11 +1,14 @@
 ﻿@model List<Vidly.Models.Customer>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Customers";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<br />
 
-<h2>Customers</h2>
+@Html.ActionLink("New Customer", "New", "Customer", new { @class = "btn btn-primary" })
+<br />
+<br />
 
 <table class="table table-bordered table-hover" id="customers">
     <thead>

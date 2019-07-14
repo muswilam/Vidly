@@ -27,7 +27,7 @@ namespace Vidly.Controllers.Api
             var moviesQuery = _context.Movies
                 .Include(mov => mov.Genre);
 
-            if (!User.IsInRole(RoleName.CanManageMovies))
+            if (!User.IsInRole(RoleName.AdminManagment))
                 moviesQuery = moviesQuery
                     .Where(mov => mov.NumberAvailable > 0);
 
@@ -54,7 +54,7 @@ namespace Vidly.Controllers.Api
 
         //Post Movie /api/movies
         [HttpPost]
-        [Authorize(Roles = RoleName.CanManageMovies)]
+        [Authorize(Roles = RoleName.AdminManagment)]
         public IHttpActionResult CreateMovie(MovieDto movieDto)
         {
             if (!ModelState.IsValid)
@@ -71,7 +71,7 @@ namespace Vidly.Controllers.Api
 
         //Update Movie /api/movies/i
         [HttpPut]
-        [Authorize(Roles = RoleName.CanManageMovies)]
+        [Authorize(Roles = RoleName.AdminManagment)]
         public IHttpActionResult UpdateMovie(int id , MovieDto movieDto)
         {
             var movieInDb = _context.Movies.SingleOrDefault(mov => mov.Id == id);
@@ -89,7 +89,7 @@ namespace Vidly.Controllers.Api
 
         //Delete Movie /api/movies/1
         [HttpDelete]
-        [Authorize( Roles = RoleName.CanManageMovies)]
+        [Authorize( Roles = RoleName.AdminManagment)]
         public IHttpActionResult DeleteMovie(int id)
         {
             var movieInDb = _context.Movies.SingleOrDefault(mov => mov.Id == id);
